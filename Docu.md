@@ -35,7 +35,7 @@ Doing this for the 48h tech challenge of [Assembler School](https://github.com/a
 
 -   [ ] Design the database.
 -   [x] Create React and Redux base template.
--   [ ] Add Firebase auth
+-   [x] Add Firebase auth
 -   [ ] Create Express server with the endpoints.
 -   [ ] Finish the Whole API
 

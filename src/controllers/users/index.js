@@ -9,12 +9,10 @@ export async function signUp(req, res, next) {
         if (response) return res.status(204).send(response)
 
         const user = await User.create(body)
-        console.log(user)
 
         if (user) return res.status(202).send(user)
         if (!user) return res.status(400).send(user)
     } catch (error) {
-        // next(error)
-        console.log( error)
+        next(error)
     }
 }

@@ -1,19 +1,12 @@
+
 async function authMiddleware(req, res, next) {
+        // TODOx
     try {
-        const bearerToken = await auth.getAuthToken(req.headers);
-        const userClaims = await auth.verifyAuthToken(bearerToken);
-        auth.login(req, userClaims);
-
-        next();
+        // TODOx
     } catch (error) {
-        logger.debug(error);
-
-        res.status(401).send({
-            data: null,
-            error: 'Unauthorized',
-        });
+        // TODOx
     }
+        // TODOx
 }
 
-export default authMiddleware;
-
+export default authMiddleware

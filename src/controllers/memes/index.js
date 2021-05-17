@@ -8,20 +8,20 @@ export async function getAllMemes(req, res, next) {
         if (response.length <= 0) return res.status(204).send(response)
         if (response) return res.status(200).send(response)
     } catch (error) {
-        // next(error)
+        next(error)
     }
 }
 
 export async function postMeme(req, res, next) {
     const { body } = req
+    console.log( body)
 
     try {
         const response = await Meme.create(body)
-        console.log(response)
 
         if (!response) return res.status(400).send(response)
         if (response) return res.status(202).send(response)
     } catch (error) {
-        // next(error)
+        next(error)
     }
 }
