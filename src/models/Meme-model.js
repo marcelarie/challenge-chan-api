@@ -1,14 +1,25 @@
 import mongoose from 'mongoose'
 
-const stringReq = {
-    type: String,
-    required,
-}
-
 const MemeSchema = mongoose.Schema({
-    name: stringReq,
-    topic: stringReq,
-    imageUrl: stringReq,
+    name: {
+        type: String,
+        required: true,
+    },
+    topic: {
+        type: String,
+        required: true,
+    },
+    imageUrl: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+    },
+    user: {
+        type: String,
+        ref: 'user'
+    }
 })
 
 const Meme = mongoose.model('meme', MemeSchema)
