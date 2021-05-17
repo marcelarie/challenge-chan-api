@@ -34,12 +34,13 @@ Doing this for the 48h tech challenge of [Assembler School](https://github.com/a
 # Monday 17 May
 
 -   [ ] Design the database.
+-   [x] Create React and Redux base template.
+-   [ ] Add Firebase auth
 -   [ ] Create Express server with the endpoints.
 -   [ ] Finish the Whole API
 
 # Tue 18 May
 
--   [ ] Create React and Redux base template.
 -   [ ] Create the Landing Page
 -   [ ] Create the Register component.
 -   [ ] Create the imageboard page.
@@ -48,6 +49,6 @@ Doing this for the 48h tech challenge of [Assembler School](https://github.com/a
 
 # Wednesday 19 May
 
-- [ ] Deploy (? maybe)
-- [ ] Debugging
-- [ ] Delivery
+-   [ ] Deploy (? maybe)
+-   [ ] Debugging
+-   [ ] Delivery

@@ -3,7 +3,6 @@ import Meme from '../../models/Meme-model.js'
 export async function getAllMemes(req, res, next) {
     try {
         const response = await Meme.find({})
-        console.log(response.data)
 
         if (!response) return res.status(400).send(response)
         if (response.length <= 0) return res.status(204).send(response)
