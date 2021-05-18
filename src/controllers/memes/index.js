@@ -2,7 +2,7 @@ import Meme from '../../models/Meme-model.js'
 
 export async function getAllMemes(req, res, next) {
     try {
-        const response = await Meme.find({})
+        const response = await Meme.find({}).populate('user').sort({ $natural: '-1'})
 
         if (!response) return res.status(400).send(response)
         if (response.length <= 0) return res.status(204).send(response)
@@ -14,7 +14,6 @@ export async function getAllMemes(req, res, next) {
 
 export async function postMeme(req, res, next) {
     const { body } = req
-    console.log( body)
 
     try {
         const response = await Meme.create(body)

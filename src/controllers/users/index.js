@@ -4,7 +4,7 @@ export async function signUp(req, res, next) {
     const { body } = req
 
     try {
-        const response = await User.findOne({ _id: body.id })
+        const response = await User.findOne({ _id: body._id })
 
         if (response) return res.status(204).send(response)
 
@@ -12,6 +12,20 @@ export async function signUp(req, res, next) {
 
         if (user) return res.status(202).send(user)
         if (!user) return res.status(400).send(user)
+    } catch (error) {
+        next(error)
+    }
+}
+
+export async function getUserById(req, res, next) {
+    const { id } = req.params
+
+    try {
+        const response = await User.findById(id)
+        console.log( response)
+
+        if (response) return res.status(202).send(response)
+        if (!response) return res.status(400).send(response)
     } catch (error) {
         next(error)
     }
