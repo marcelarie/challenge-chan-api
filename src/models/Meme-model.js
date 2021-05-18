@@ -1,22 +1,21 @@
 import mongoose from 'mongoose'
 
 const MemeSchema = mongoose.Schema({
-  name : {
-    type : String,
-    required : true,
-  },
-  topic : {
-    type : String,
-    required : true,
-  },
-  imageUrl : {
-    type : String,
-    required : true,
-  },
-  description : {
-    type : String,
-  },
-  user : {type : String, ref : 'user'},
+    name: {
+        type: String,
+    },
+    topic: {
+        type: String,
+    },
+    imageUrl: {
+        type: String,
+    },
+    description: {
+        type: String,
+    },
+    itsComment: { type: Boolean, default: false },
+    user: { type: String, ref: 'user' },
+    comments: [{ type: String, ref: 'meme' }],
 })
 
 MemeSchema.set('timestamps', true)
