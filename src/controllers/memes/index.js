@@ -1,8 +1,24 @@
 import Meme from '../../models/Meme-model.js'
+import User from '../../models/User-model.js'
 
 export async function getAllMemes(req, res, next) {
     try {
-        const response = await Meme.find({ itsComment: false }).populate('user comments').sort({ $natural: '-1' })
+        const response = await Meme.find({ itsComment: false })
+            .populate([
+                {
+                    path: 'user',
+                    model: User,
+                },
+                {
+                    path: 'comments',
+                    model: Meme,
+                    populate: {
+                        path: 'user',
+                        model: User,
+                    },
+                },
+            ])
+            .sort({ $natural: '-1' })
 
         if (!response) return res.status(400).send(response)
         if (response.length <= 0) return res.status(204).send(response)
