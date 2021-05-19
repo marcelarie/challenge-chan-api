@@ -40,13 +40,11 @@ export async function postMeme(req, res, next) {
         const checkedBody = memeBody(body)
 
         const response = await Meme.create(checkedBody.rest)
-        console.log(response)
 
         if (checkedBody.commentId) {
-            const commentResponse = await Meme.findByIdAndUpdate(checkedBody.commentId, {
+             await Meme.findByIdAndUpdate(checkedBody.commentId, {
                 $push: { comments: response._id },
             })
-            console.log(commentResponse)
         }
         if (!response) return res.status(400).send(response)
         if (response) return res.status(202).send(response)
