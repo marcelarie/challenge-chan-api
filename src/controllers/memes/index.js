@@ -2,8 +2,10 @@ import Meme from '../../models/Meme-model.js'
 import User from '../../models/User-model.js'
 
 export async function getAllMemes(req, res, next) {
+    const { topic } = req.params
     try {
-        const response = await Meme.find({ itsComment: false })
+        console.log(topic)
+        const response = await Meme.find({ itsComment: false, topic }, )
             .populate([
                 {
                     path: 'user',
@@ -42,7 +44,7 @@ export async function postMeme(req, res, next) {
         const response = await Meme.create(checkedBody.rest)
 
         if (checkedBody.commentId) {
-             await Meme.findByIdAndUpdate(checkedBody.commentId, {
+            await Meme.findByIdAndUpdate(checkedBody.commentId, {
                 $push: { comments: response._id },
             })
         }

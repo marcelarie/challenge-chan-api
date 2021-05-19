@@ -22,7 +22,20 @@ export async function getUserById(req, res, next) {
 
     try {
         const response = await User.findById(id)
-        console.log( response)
+
+        if (response) return res.status(202).send(response)
+        if (!response) return res.status(400).send(response)
+    } catch (error) {
+        next(error)
+    }
+}
+
+export async function getUserByUsername(req, res, next) {
+    const { username } = req.params
+    console.log(username)
+
+    try {
+        const response = await User.findOne({ username })
 
         if (response) return res.status(202).send(response)
         if (!response) return res.status(400).send(response)
