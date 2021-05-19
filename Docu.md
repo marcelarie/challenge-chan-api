@@ -5,22 +5,22 @@ Doing this for the 48h tech challenge of [Assembler School](https://github.com/a
 
 # Challenge Objectives
 
--   **Login** and **registration**
--   **Home page** that will show the **content uploaded** by users
+-   **Login** and **registration** ✅
+-   **Home page** that will show the **content uploaded** by users ✅
+-   **Upload content page** ✅
+    -   If the user is logged in, a **multimedia resource** can be **uploaded** from their **computer** or from a an **external link** ✅
 -   **Main Navbar** that will include:
-    -   **Content search bar**:
+    -   **Content search bar**: ✅
         -   You will have at least **three options** to filter the **main content**
     -   **Links** to the **main categories**
-    -   **Information** of the **logged in user**
-        -   If you are not logged in, the **button** to log in will be **displayed**
--   **Upload content page**
-    -   If the user is logged in, a **multimedia resource** can be **uploaded** from their **computer** or from a an **external link**
+    -   **Information** of the **logged in user** ✅
+        -   If you are not logged in, the **button** to log in will be **displayed** ✅
 -   **Page** of the **selected multimedia** element:
-    -   The **user can obtain the link** of the **multimedia resource** to include it on any **website**
+    -   The **user can obtain the link** of the **multimedia resource** to include it on any **website** ✅
 
 # Additional Features
 
--   **Comments**
+-   **Comments** ✅
 -   **Anonymous** users
 
 # Technologies
@@ -33,22 +33,33 @@ Doing this for the 48h tech challenge of [Assembler School](https://github.com/a
 
 # Monday 17 May
 
--   [ ] Design the database.
+-   [x] Design the database.
 -   [x] Create React and Redux base template.
 -   [x] Add Firebase auth
--   [ ] Create Express server with the endpoints.
--   [ ] Finish the Whole API
+-   [x] Create Express server with the endpoints.
+-   [x] Finish the Whole API
+-   [x] Setup cloudinary
 
 # Tue 18 May
 
--   [ ] Create the Landing Page
--   [ ] Create the Register component.
--   [ ] Create the imageboard page.
--   [ ] Create search bar.
--   [ ] Create user page.
+-   [x] Create the Landing Page
+-   [x] Create the Register component.
+-   [x] Create the imageboard page.
+-   [x] Create post meme component.
+-   [x] Create comments comments.
+-   [x] Save Redux state on local storage (?) bug: can save everything
 
 # Wednesday 19 May
 
--   [ ] Deploy (? maybe)
--   [ ] Debugging
+-   [x] Fix no image comments
+-   [x] Fix undefined on comments
+-   [x] Create search bar.
+-   [x] Create user page.
+-   [x] Pages per topic
+-   [x] Debugging
+-   [ ] Clean local storage on logout
+-   [ ] Redesign
+-   [ ] Add zoom on image when clicking on them
 -   [ ] Delivery
+-   [ ] Deploy (? maybe)
+
