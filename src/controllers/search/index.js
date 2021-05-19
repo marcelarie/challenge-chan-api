@@ -34,7 +34,7 @@ export async function searchByParams(req, res, next) {
         if (!memeNameResponse || !memeDescriptionResponse) return res.status(400).send(memeNameResponse || memeDescriptionResponse)
         if (!usernameResponse || !emailResponse) return res.status(400).send(usernameResponse || emailResponse)
 
-        return res.status(200).send({ memes: memeNameResponse, memeDescriptionResponse, users: { emailResponse, usernameResponse } })
+        return res.status(200).send({ memes: { memeNameResponse, memeDescriptionResponse }, users: { emailResponse, usernameResponse } })
     } catch (error) {
         next(error)
     }
